@@ -2,12 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import { options } from "./constants";
 
+import "./Card.css";
+import classNames from "classnames";
+
   export const Card = ({
    children = "I am a Card",
     color  = "primary", 
     size = "sm"
    }) => {
-  return <div>{children}</div>;
+  return <div className={classNames("card",{   
+    [`color-${color}`]: color,
+    [`size-${size}`]: size,
+  })}>{children}</div>;
 };
 
 Card.propTypes = {
