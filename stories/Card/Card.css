@@ -27,3 +27,13 @@
 .size-lg{
     min-height: 115px;
 }
+
+.is-dragable{
+    cursor: pointer;
+
+}
+
+.is-dragable{
+    cursor: grab;
+    user-select: none;
+}
