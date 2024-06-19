@@ -2,22 +2,28 @@ import React from "react";
 import PropTypes from "prop-types";
 import { options } from "./constants";
 import classNames from "classnames";
-import "./Card.css";
 
+import styles from "./Card.module.css"
 
-  export const Card = ({
-   children,
-    color  = "primary", 
-    size = "sm",
-    isClickable,
-    isDragable
-   }) => {
-  return <div className={classNames("card",{   
-    [`color-${color}`]: color,
-    [`size-${size}`]: size,
-    "is-clickable": isClickable,
-    "is-dragable": isDragable
-  })}>{children}</div>;
+export const Card = ({
+  children,
+  color = "primary",
+  size = "sm",
+  isClickable,
+  isDragable,
+}) => {
+  return (
+    <div
+      className={classNames(styles.card, {
+        [styles[`color-${color}`]]: color,
+        [styles[`size-${size}`]]: size,
+        [styles["is-clickable"]]: isClickable,
+        [styles["is-dragable"]]: isDragable,
+      })}
+    >
+      {children}
+    </div>
+  );
 };
 
 Card.propTypes = {
